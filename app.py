@@ -15,7 +15,7 @@ app.secret_key = r"8gQ<fO(QBVm]*:%"
 
 @app.route("/")
 def home():
-    session["country"] = "not a country"
+    # session["country"] = "not a country"
     return render_template("base.html")
 
 
@@ -33,12 +33,10 @@ def about():
 def data_value():
     if request.method == "POST":
         # if session.get("country") != request.form["numdata"]:
-        country = request.form["numdata"]
+        country = request.form["countrydata"]
         session["country"] = country
         with open("results.txt", "w") as f:
             f.write(country + "\n")
-            f.write(session.get("country"))
-
     return "fuck"
 
 
