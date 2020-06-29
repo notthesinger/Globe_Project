@@ -32,9 +32,7 @@ def about():
 @app.route("/data", methods=["POST"])
 def data_value():
     if request.method == "POST":
-        # if session.get("country") != request.form["numdata"]:
         country = request.form["countrydata"]
-        session["country"] = country
         with open("results.txt", "w") as f:
             f.write(country + "\n")
     return "fuck"
