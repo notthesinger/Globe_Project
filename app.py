@@ -7,10 +7,14 @@ from flask import (
     redirect,
     session,
 )
+import yaml
+
+with open(r"config.yaml") as f:
+    keys = yaml.full_load(f)
 
 app = Flask(__name__)
 app.debug = True
-app.secret_key = r"8gQ<fO(QBVm]*:%"
+app.secret_key = keys['secret_key']
 
 
 @app.route("/")
@@ -35,7 +39,7 @@ def data_value():
         country = request.form["countrydata"]
         with open("results.txt", "w") as f:
             f.write(country + "\n")
-    return "fuck"
+    return "fish_null_return"
 
 
 if __name__ == "__main__":
