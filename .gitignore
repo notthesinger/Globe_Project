@@ -1,9 +1,7 @@
 .gitignore
 config.yaml
-db_connection.PNG
-results.txt
-static\js\animated.js
-static\js\core.js
-static\js\globe.js
-static\js\worldLow.js
-static\js\maps.js
+animated.js
+maps.js
+worldLow.js
+globe.js
+core.js
