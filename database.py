@@ -6,11 +6,8 @@ import pyodbc
 import yaml
 
 
-
 def main():
     keys = yaml_get(r'config.yaml')
-    server = 'LAPTOP-CGRK8PLH'
-    database = 'global'
     conn = pyodbc.connect("driver={SQL Server Native Client 11.0};server=" 
                             + keys['server'] + "; database=" + keys['database'] + "; trusted_connection=yes;",
         autocommit=True)
